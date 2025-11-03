@@ -15,4 +15,3 @@ git clone https://github.com/janixpl/nvim-config.git ~/.config/nvim
 
 nvim
 ```
-```
