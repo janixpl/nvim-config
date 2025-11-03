@@ -2,6 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     config = function()
+      vim.opt.clipboard = "unnamedplus"
       vim.opt.number = true
       vim.opt.relativenumber = false
       vim.cmd.colorscheme("industry")
