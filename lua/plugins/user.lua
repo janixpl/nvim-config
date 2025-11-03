@@ -32,6 +32,7 @@ return {
   -- Mason LSP bridge + Rust analyzer
   {
     "mason-org/mason-lspconfig.nvim",
+    event = "VeryLazy",
     dependencies = { "neovim/nvim-lspconfig" },
     opts = {
       ensure_installed = { "rust_analyzer" },
