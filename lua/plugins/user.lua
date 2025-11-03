@@ -1,15 +1,15 @@
 vim.api.nvim_create_autocmd("User", {
   pattern = "VeryLazy",
   callback = function()
-    local ok, mason_registry = pcall(require, "mason-registry")
-    if ok then
-      -- odczekaj sekundę, aż Mason skończy instalacje w tle
-      vim.defer_fn(function()
-        if mason_registry.refresh then
-          mason_registry.refresh()
-        end
-      end, 1000)
+    local function safe_refresh()
+      local ok, mason_registry = pcall(require, "mason-registry")
+      if ok and mason_registry.refresh then
+        mason_registry.refresh()
+      else
+        vim.defer_fn(safe_refresh, 500)
+      end
     end
+    safe_refresh()
   end,
 })
 
@@ -22,14 +22,13 @@ return {
     end,
   },
 
-  -- Mason (menedżer LSP, DAP, narzędzi)
   {
     "mason-org/mason.nvim",
+    event = "VeryLazy",
     build = ":MasonUpdate",
     config = true,
   },
 
-  -- Mason LSP bridge + Rust analyzer
   {
     "mason-org/mason-lspconfig.nvim",
     event = "VeryLazy",
@@ -39,7 +38,6 @@ return {
     },
   },
 
-  -- Konfiguracja LSP dla Rust
   {
     "neovim/nvim-lspconfig",
     opts = {
