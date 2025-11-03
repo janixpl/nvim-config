@@ -6,7 +6,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 Overwrite for my configuration:
 
 ```
-```rm -rf ~/.config/nvim
+rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.local/state/nvim
 rm -rf ~/.cache/nvim
