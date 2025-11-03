@@ -9,7 +9,7 @@ return {
 
   -- Mason (menedżer LSP, DAP, narzędzi)
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     build = ":MasonUpdate",
     config = true,
   },
