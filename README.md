@@ -15,7 +15,7 @@ git clone https://github.com/janixpl/nvim-config.git ~/.config/nvim
 
 nvim
 ```
-or better (this will require ssh keys configuration):
+or better (this will require ssh keys):
 
 ```
 rm -rf ~/.config/nvim
