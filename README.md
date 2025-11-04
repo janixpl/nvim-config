@@ -46,8 +46,8 @@ will be automatically loaded by [lazy.nvim](https://github.com/folke/lazy.nvim)
 │   │   ├── lazy.lua
 │   │   └── options.lua
 │   └── plugins
-│       ├── spec1.lua
+│       ├── example.lua
 │       ├── **
-│       └── spec2.lua
+│       └── user.lua           <------ my config
 └── init.lua
 </pre>
