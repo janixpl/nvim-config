@@ -15,7 +15,7 @@ git clone https://github.com/janixpl/nvim-config.git ~/.config/nvim
 
 nvim
 ```
-or
+or better (this will require ssh keys configuration):
 
 ```
 rm -rf ~/.config/nvim
@@ -27,6 +27,19 @@ git clone git@github.com:janixpl/nvim-config.git ~/.config/nvim
 
 nvim
 ```
+
+## SSH configuration
+<pre>
+ssh-keygen -t ed25519 -C "my@email.com"
+cat ~/.ssh/id_ed25519.pub
+paste in github ssh section
+
+in my https repo:
+git remote -v
+git remote set-url origin git@github.com:janixpl/nvim-config.git
+git remote -v
+</pre>
+
 ## 📂 File Structure
 
 The files under config will be automatically loaded at the appropriate time,
